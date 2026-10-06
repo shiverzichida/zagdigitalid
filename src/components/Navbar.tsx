@@ -16,11 +16,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Layanan', href: '#services' },
-    { name: 'Portofolio', href: '#portfolio' },
-    { name: 'Keunggulan', href: '#why-us' },
-    { name: 'Kalkulator Biaya', href: '#calculator', badge: 'Interactive' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Layanan', href: '/#services' },
+    { name: 'Portofolio', href: '/#portfolio' },
+    { name: 'Keunggulan', href: '/#why-us' },
+    { name: 'Kalkulator', href: '/#calculator', badge: 'Interactive' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'FAQ', href: '/#faq' },
   ];
 
   return (
@@ -34,7 +35,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all">
               <div className="w-full h-full bg-[#0b0f19] rounded-[10px] flex items-center justify-center">
                 <span className="font-extrabold text-lg tracking-wider bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
