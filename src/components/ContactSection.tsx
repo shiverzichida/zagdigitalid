@@ -41,20 +41,25 @@ export default function ContactSection() {
     setErrorMsg('');
 
     try {
-      await submitInquiry({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        project_type: formData.project_type,
-        estimated_budget: formData.estimated_budget,
-        message: formData.message,
-      });
+      if (isSupabaseConfigured) {
+        await submitInquiry({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          project_type: formData.project_type,
+          estimated_budget: formData.estimated_budget,
+          message: formData.message,
+        });
+      }
 
       setSubmitted(true);
+      // Seamlessly launch WhatsApp with structured proposal
+      window.open(getDirectWhatsAppUrl(), '_blank');
     } catch (err: any) {
       console.error(err);
-      setErrorMsg('Gagal mengirim pesan. Silakan hubungi kami langsung via WhatsApp.');
+      window.open(getDirectWhatsAppUrl(), '_blank');
+      setSubmitted(true);
     } finally {
       setLoading(false);
     }
