@@ -1,0 +1,132 @@
+---
+import { COMPANY_INFO, SERVICES } from '../data/companyData';
+import { MessageSquare, Mail, Heart, ArrowUpRight } from 'lucide-react';
+import InstagramIcon from './icons/InstagramIcon';
+---
+
+<footer class="bg-[#070a11] border-t border-slate-800/80 pt-16 pb-12 text-slate-400 text-xs">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      
+      {/* Brand Bio (2 cols) */}
+      <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 p-[1.5px]">
+            <div class="w-full h-full bg-[#0b0f19] rounded-[10px] flex items-center justify-center font-extrabold text-base text-cyan-400">
+              Z
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-extrabold text-lg text-white tracking-tight">
+              ZAG<span class="text-cyan-400">.</span>DIGITAL
+            </span>
+            <span class="text-[10px] text-slate-400 tracking-wider font-mono uppercase">
+              Indonesia
+            </span>
+          </div>
+        </div>
+
+        <p class="text-slate-300 leading-relaxed max-w-sm">
+          Partner rekayasa perangkat lunak, sistem informasi enterprise (Bill of Lading, invoice, ERP), HRIS operasional, serta infrastruktur cloud handal di Indonesia.
+        </p>
+
+        <div class="flex items-center gap-3 pt-2">
+          <a
+            href={COMPANY_INFO.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-pink-400 hover:border-pink-500/40 transition-colors"
+            aria-label="Instagram"
+          >
+            <InstagramIcon className="w-4 h-4" />
+          </a>
+          <a
+            href={`https://wa.me/${COMPANY_INFO.whatsappNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
+            aria-label="WhatsApp"
+          >
+            <MessageSquare className="w-4 h-4" />
+          </a>
+          <a
+            href={`mailto:${COMPANY_INFO.email}`}
+            class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
+            aria-label="Email"
+          >
+            <Mail className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+
+      {/* Services Links */}
+      <div class="space-y-3">
+        <h4 class="font-semibold text-white uppercase text-[11px] tracking-wider font-mono">
+          Layanan Utama
+        </h4>
+        <ul class="space-y-2">
+          <li><a href="#services" class="hover:text-cyan-400 transition-colors">Custom Web App</a></li>
+          <li><a href="#services" class="hover:text-cyan-400 transition-colors">Sistem Informasi & ERP</a></li>
+          <li><a href="#services" class="hover:text-cyan-400 transition-colors">HRIS Cuti & Operasional</a></li>
+          <li><a href="#services" class="hover:text-cyan-400 transition-colors">Cloud & Hosting .id</a></li>
+          <li><a href="#services" class="hover:text-cyan-400 transition-colors">IT Maintenance & CCTV</a></li>
+        </ul>
+      </div>
+
+      {/* Quick Navigation */}
+      <div class="space-y-3">
+        <h4 class="font-semibold text-white uppercase text-[11px] tracking-wider font-mono">
+          Navigasi Cepat
+        </h4>
+        <ul class="space-y-2">
+          <li><a href="#portfolio" class="hover:text-cyan-400 transition-colors">Studi Kasus & Portofolio</a></li>
+          <li><a href="#calculator" class="hover:text-cyan-400 transition-colors">Kalkulator Estimasi Biaya</a></li>
+          <li><a href="#why-us" class="hover:text-cyan-400 transition-colors">Keunggulan & Standar Kerja</a></li>
+          <li><a href="#faq" class="hover:text-cyan-400 transition-colors">Tanya Jawab (FAQ)</a></li>
+          <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Formulir Proposal</a></li>
+        </ul>
+      </div>
+
+      {/* Trust & Guarantee */}
+      <div class="space-y-3">
+        <h4 class="font-semibold text-white uppercase text-[11px] tracking-wider font-mono">
+          Standar & Jaminan
+        </h4>
+        <div class="space-y-2.5 text-[11px] leading-relaxed text-slate-300">
+          <p class="flex items-center gap-1.5 text-cyan-300">
+            <span>🛡️</span>
+            <span>Garansi 30 Hari Minor Bug Free</span>
+          </p>
+          <p class="flex items-center gap-1.5 text-emerald-300">
+            <span>📄</span>
+            <span>Invoice Resmi CV IT Konsultan</span>
+          </p>
+          <p class="flex items-center gap-1.5 text-indigo-300">
+            <span>⚡</span>
+            <span>100% Hak Milik Source Code</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    {/* Bottom Bar */}
+    <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+      <div>
+        © 2026 {COMPANY_INFO.name}. Seluruh Hak Cipta Dilindungi.
+      </div>
+      <div class="flex items-center gap-2">
+        <span>Official Social:</span>
+        <a 
+          href={COMPANY_INFO.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-cyan-400 hover:text-cyan-300 font-medium inline-flex items-center gap-1"
+        >
+          <span>{COMPANY_INFO.instagramHandle}</span>
+          <ArrowUpRight className="w-3 h-3" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

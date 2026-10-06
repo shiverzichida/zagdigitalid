@@ -1,0 +1,99 @@
+---
+import { CASE_STUDIES, COMPANY_INFO } from '../data/companyData';
+import { ArrowRight, CheckCircle, ExternalLink, FolderGit2 } from 'lucide-react';
+---
+
+<section id="portfolio" class="py-24 bg-slate-950/60 border-t border-slate-800/80 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Section Header */}
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+          Studi Kasus & Portofolio
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+          Sistem Nyata yang Membantu Operasional Bisnis
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg">
+          Kami bangga dipercaya menangani sistem krusial perusahaan dari berbagai sektor industri dengan performa tinggi dan nol hambatan.
+        </p>
+      </div>
+
+      <div class="shrink-0">
+        <a
+          href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=Halo%20ZAG%20Digital,%20saya%20ingin%20melihat%20demo%20portofolio%20sistem%20lainnya.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-cyan-400 bg-cyan-950/50 hover:bg-cyan-900/60 border border-cyan-800/60 transition-all"
+        >
+          <span>Request Demo Sistem</span>
+          <ArrowRight className="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+    {/* Case Studies Grid */}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {CASE_STUDIES.map((project, idx) => (
+        <div class="flex flex-col justify-between bg-slate-900/60 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/5 transition-all group">
+          
+          <div>
+            {/* Header / Client Info */}
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-4 pb-4 border-b border-slate-800/80">
+              <span class="font-mono text-cyan-400 font-semibold">{project.client}</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 font-mono text-[11px]">{project.year}</span>
+            </div>
+
+            {/* Category */}
+            <span class="text-xs uppercase font-mono tracking-wider text-slate-400 block mb-2">
+              {project.category}
+            </span>
+
+            {/* Title */}
+            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors leading-snug">
+              {project.title}
+            </h3>
+
+            {/* Problem & Solution */}
+            <div class="space-y-3 mb-6 text-xs text-slate-300">
+              <div class="bg-slate-950/70 p-3 rounded-lg border border-slate-800/60">
+                <span class="text-rose-400 font-semibold block mb-1">Tantangan:</span>
+                <p class="leading-relaxed">{project.challenge}</p>
+              </div>
+
+              <div class="bg-slate-950/70 p-3 rounded-lg border border-slate-800/60">
+                <span class="text-emerald-400 font-semibold block mb-1">Solusi ZAG Digital:</span>
+                <p class="leading-relaxed">{project.solution}</p>
+              </div>
+            </div>
+
+            {/* Result Highlights */}
+            <div class="space-y-1.5 mb-6">
+              <span class="text-xs font-semibold text-slate-200 block mb-2">Hasil & Dampak:</span>
+              {project.results.map((res) => (
+                <div class="flex items-start gap-2 text-xs text-slate-300">
+                  <CheckCircle className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>{res}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            {/* Tags */}
+            <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/80">
+              {project.tags.map((tag) => (
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-cyan-300 border border-slate-700/50">
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

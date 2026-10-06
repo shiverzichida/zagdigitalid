@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero.astro';
+import TechStackTicker from '../components/TechStackTicker.astro';
+import Services from '../components/Services.astro';
+import PortfolioShowcase from '../components/PortfolioShowcase';
+import ProjectCalculator from '../components/ProjectCalculator';
+import WhyUs from '../components/WhyUs.astro';
+import FAQ from '../components/FAQ.astro';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloating from '../components/WhatsAppFloating.astro';
+import { COMPANY_INFO } from '../data/companyData';
+---
+
+<Layout
+  title={`${COMPANY_INFO.name} | ${COMPANY_INFO.tagline}`}
+  description="Software House & IT Consultant terpercaya di Indonesia. Melayani pembuatan Web Kustom, Sistem Informasi (SI Logistik & Bill of Lading), ERP, HRIS Cuti Karyawan, Domain & Hosting."
+>
+  {/* Sticky Navigation Bar */}
+  <Navbar client:load />
+
+  <main>
+    {/* Hero Section */}
+    <Hero />
+
+    {/* Modern Tech Stack Ribbon */}
+    <TechStackTicker />
+
+    {/* Core Services Section */}
+    <Services />
+
+    {/* Real World Portfolio & Case Studies (5 Client Websites) */}
+    <PortfolioShowcase client:visible />
+
+    {/* Interactive Project Cost & Timeline Calculator (React Island) */}
+    <ProjectCalculator client:visible />
+
+    {/* Why Choose ZAG Digital & Guarantees */}
+    <WhyUs />
+
+    {/* Frequently Asked Questions */}
+    <FAQ />
+
+    {/* Contact & Consultation Form (Supabase & WhatsApp Ready) */}
+    <ContactSection client:visible />
+  </main>
+
+  {/* Footer */}
+  <Footer />
+
+  {/* Floating WhatsApp Action Button */}
+  <WhatsAppFloating />
+</Layout>

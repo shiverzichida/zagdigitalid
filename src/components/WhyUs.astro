@@ -1,0 +1,79 @@
+---
+import { WHY_US } from '../data/companyData';
+import { ShieldCheck, Award, FileCode, Clock3, CheckCircle } from 'lucide-react';
+---
+
+<section id="why-us" class="py-24 bg-slate-950/40 border-t border-slate-800/80 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Section Header */}
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+        Keunggulan Kami
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+        Mengapa Korporasi & Bisnis Memilih ZAG Digital?
+      </h2>
+      <p class="text-slate-300 text-base sm:text-lg">
+        Kami tidak hanya menulis baris kode, tapi memberikan solusi rekayasa perangkat lunak yang aman, scalable, dan memiliki dampak bisnis nyata.
+      </p>
+    </div>
+
+    {/* Features Grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      {WHY_US.map((item, index) => (
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/50 hover:bg-slate-900/90 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded-md border border-cyan-800/40">
+                {item.badge}
+              </span>
+              <span class="text-xs font-mono text-slate-500">0{index + 1}</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white mb-2.5 leading-snug">
+              {item.title}
+            </h3>
+
+            <p class="text-xs text-slate-300 leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs text-cyan-400">
+            <CheckCircle className="w-4 h-4" />
+            <span>Terjamin dalam kontrak</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Metric / Stat Strip */}
+    <div class="rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900 border border-slate-800 p-8 shadow-xl">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-slate-800">
+        
+        <div class="pt-4 lg:pt-0">
+          <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400 mb-1">99.9%</div>
+          <div class="text-xs text-slate-400 font-medium">Uptime Reliabilitas Cloud</div>
+        </div>
+
+        <div class="pt-4 lg:pt-0">
+          <div class="text-3xl sm:text-4xl font-extrabold text-blue-400 mb-1">30 Hari</div>
+          <div class="text-xs text-slate-400 font-medium">Garansi Maintenance Minor</div>
+        </div>
+
+        <div class="pt-4 lg:pt-0">
+          <div class="text-3xl sm:text-4xl font-extrabold text-indigo-400 mb-1">100%</div>
+          <div class="text-xs text-slate-400 font-medium">Source Code Milik Klien</div>
+        </div>
+
+        <div class="pt-4 lg:pt-0">
+          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">&lt; 2 Jam</div>
+          <div class="text-xs text-slate-400 font-medium">Respon Tanggap Konsultasi</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
